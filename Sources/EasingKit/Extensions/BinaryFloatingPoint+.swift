@@ -50,6 +50,7 @@ public extension BinaryFloatingPoint {
     ///   - outputRange: The output range to map the eased interpolation amount to.
     /// - Returns: The eased interpolation amount, mapped to the output range.
     func eased(within range: ClosedRange<Self>, with easing: Easing, interpolatedWithin outputRange: ClosedRange<Self> = 0.0...1.0) -> Self {
-        return outputRange.lowerBound.interpolated(towards: outputRange.upperBound, actualValue: self, using: easing)
+        let interpolation = Double((self - range.lowerBound) / (range.upperBound - range.lowerBound))
+        return outputRange.lowerBound.interpolated(towards: outputRange.upperBound, amount: interpolation, using: easing)
     }
 }
