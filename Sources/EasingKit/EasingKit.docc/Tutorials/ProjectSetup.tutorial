@@ -1,0 +1,37 @@
+@Tutorial(time: 5) {
+    @Intro(title: "Setup the project") {
+        Setup the project for the tutorial. 
+        
+        @Image(source: project-setup-intro.png, alt: "An iPhone screenshot depicting a rectangle moving to the right using an easing function.")
+    }
+    
+    @Section(title: "Create a new app") {
+        @ContentAndMedia {
+            Create and configure a new app.
+            
+            @Image(source: project-setup-section1.png, alt: "The Xcode icon.")
+        }
+        
+        @Steps {
+            @Step {
+                Press ⌘ + ⇧ + N to open the new project window.
+                
+                Choose the "App" template and click next.
+                
+                @Image(source: project-setup-section1-1.png, alt: "Screenshot of the new project window.")
+            }
+            
+            @Step {
+                Choose a name for your app. I picked 'EasingTesting'.
+                
+                @Image(source: project-setup-section1-2.png, alt: "Screenshot of the new app playground options window.")
+            }
+            
+            @Step {
+                Add [`EasingKit`](https://github.com/nozhana/EasingKit.git) as a package dependency.
+                
+                @Image(source: project-setup-section1-3.png, alt: "Screenshot of the Add new package dependency window.")
+            }
+        }
+    }
+}

@@ -1,0 +1,116 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Apply easing functions to a drag gesture") {
+        After the project is setup, you can now use easing functions to further upgrade the drag experience.
+        
+        @Image(source: drag-intro.png, alt: "An iPhone screenshot depicting a rectangle moving to the right using an easing function.")
+    }
+    
+    @Section(title: "Setup ContentView") {
+        @ContentAndMedia {
+            Create a simple rectangle and a state variable to make it move.
+            
+            @Image(source: drag-section1.png, alt: "A rectangle over two perpendicular arrows.")
+        }
+        
+        @Steps {
+            @Step {
+                Open `ContentView.swift`.
+                
+                You should be seeing the default implementation.
+                
+                @Code(name: "ContentView.swift", file: drag-section1-1.swift) {
+                    @Image(source: drag-section1-1.png, alt: "Preview screenshot.")
+                }
+            }
+            
+            @Step {
+                Remove the default implementation, and create a `Rectangle` in the middle of the screen.
+                
+                @Code(name: "ContentView.swift", file: drag-section1-2.swift) {
+                    @Image(source: drag-section1-2.png, alt: "Preview screenshot.")
+                }
+            }
+            
+            @Step {
+                Add a state variable of type `CGSize` to track the drag offset, and apply the `.offset(_:)` modifier to the rectangle.
+                
+                @Code(name: "ContentView.swift", file: drag-section1-3.swift) {
+                    @Image(source: drag-section1-2.png, alt: "Preview screenshot.")
+                }
+            }
+            
+            @Step {
+                Add a drag gesture modifier to the rectangle to change and reset the offset based on drag state.
+                
+                @Code(name: "ContentView.swift", file: drag-section1-4.swift) {
+                    @Image(source: drag-section1-4.gif, alt: "Preview screen record.")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Elastic reset") {
+        @ContentAndMedia {
+            Apply an elastic ease-out function to the reset transition.
+            
+            @Image(source: drag-section2.gif, alt: "Gif of a rectangle moving to the right using an elastic ease out function.")
+        }
+        
+        @Steps {
+            @Step {
+                Import `EasingKit`.
+                
+                @Code(name: "ContentView.swift", file: drag-section2-1.swift, previousFile: drag-section1-4.swift) {
+                    @Image(source: drag-section1-2.png)
+                }
+            }
+            
+            @Step {
+                Change the `.smooth` animation to an `.eased(.easeOutElastic)` animation.
+                
+                Notice how the rectangle bounces back and forth when released, successfully mimicking being tethered to an elastic band.
+                
+                @Code(name: "ContentView.swift", file: drag-section2-2.swift) {
+                    @Image(source: drag-section2-2.gif, alt: "Preview screen record.")
+                }
+            }
+        }
+    }
+    
+    @Section(title: "Clamp offset") {
+        @ContentAndMedia {
+            Clamp the drag offset to a certain amount using an easing function to help with the natural feel.
+            
+            @Image(source: drag-section3.gif, alt: "Gif of a rectangle moving to the right and stopping midway, eased out.")
+        }
+        
+        @Steps {
+            @Step {
+                In the `onChanged` closure, clamp the offset value to `-100...100`.
+                
+                You can use a custom extension or clamp `value.translation` directly, like the code here.
+                
+                @Code(name: "ContentView.swift", file: drag-section3-1.swift, previousFile: drag-section2-2.swift) {
+                    @Image(source: drag-section3-1.gif, alt: "Preview screen record.")
+                }
+            }
+            
+            @Step {
+                As you can see, the clamping feels very "blocky".
+                What would happen if we ease the clamped offset?
+                
+                @Image(source: drag-section3-1.gif, alt: "Preview screen record.")
+            }
+            
+            @Step {
+                Let's add a "pull" to each side of the bounding rectangle using the ``Swift/BinaryFloatingPoint/eased(within:with:interpolatedWithin:)`` function.
+                
+                Notice how the top and leading sides are using an `easeIn` function, as opposed to the bottom and trailing sides using an `easeOut` function.
+                
+                @Code(name: "ContentView.swift", file: drag-section3-3.swift, previousFile: drag-section3-1.swift) {
+                    @Image(source: drag-section3-3.gif, alt: "Preview screen record.")
+                }
+            }
+        }
+    }
+}

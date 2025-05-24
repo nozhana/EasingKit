@@ -1,0 +1,47 @@
+@Tutorial(time: 8) {
+    @Intro(title: "Apply easing functions to transition animations") {
+        See how `EasingKit` can upgrade your transitions.
+        
+        @Image(source: transition-intro.png, alt: "Two rectangles and an arrow depicting movement on drag.")
+    }
+    
+    @Section(title: "Setup ContentView") {
+        @ContentAndMedia {
+            Create a simple rectangle and a state variable to make it move.
+            
+            @Image(source: drag-section1.png, alt: "A rectangle over two perpendicular arrows.")
+        }
+        
+        @Steps {
+            @Step {
+                The rectangles inside the `VStack` are set to appear each 1/15 second after the previous one starts appearing.
+                
+                The current animation is the default animation, which is `.spring()` since `iOS 17.0+`.
+                
+                @Code(name: "ContentView.swift", file: transition-section1-1.swift) {
+                    @Image(source: transition-section1-1.gif, alt: "Preview screen record.")
+                }
+            }
+            
+            @Step {
+                Import ``EasingKit`` and change the `.default` animation to an ``SwiftUICore/Animation/eased(_:duration:)``.
+                
+                Use an ``Easing/easeInOutBack`` for the easing animation.
+                
+                @Code(name: "ContentView.swift", file: transition-section1-2.swift) {
+                    @Image(source: transition-section1-2.gif, alt: "Preview screen record.")
+                }
+            }
+            
+            @Step {
+                Play around with the easings!
+                
+                Check out ``Easing/easeOutBounce`` for a cool collision effect.
+                
+                @Code(name: "ContentView.swift", file: transition-section1-3.swift) {
+                    @Image(source: transition-section1-3.gif, alt: "Preview screen record.")
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@Tutorials(name: "EasingKit") {
+    @Intro(title: "Meet EasingKit") {
+        Use EasingKit to easily upgrade every movement throughout your application.
+        
+        @Image(source: EasingKit-icon-color.png, alt: "A technology icon representing the EasingKit framework.")
+    }
+    
+    @Chapter(name: "Setup") {
+        Setup a new project with `EasingKit`.
+        
+        @Image(source: project-setup-toc.png, alt: "Two rectangles and an arrow depicting movement on drag.")
+        
+        @TutorialReference(tutorial: "doc:ProjectSetup")
+        
+    }
+    
+    @Chapter(name: "EasingKit Essentials") {
+        Use `EasingKit` in various contexts.
+        
+        @Image(source: essentials-toc.png, alt: "Two rectangles and an arrow depicting movement on drag.")
+        
+        @TutorialReference(tutorial: "doc:DragEasing")
+        
+        @TutorialReference(tutorial: "doc:TransitionEasing")
+    }
+}
