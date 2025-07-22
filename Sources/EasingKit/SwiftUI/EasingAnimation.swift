@@ -5,7 +5,7 @@
 //  Created by Nozhan A. on 5/26/25.
 //
 
-import SwiftUICore
+import SwiftUI
 
 struct EasingAnimation: CustomAnimation {
     let duration: TimeInterval

@@ -5,7 +5,7 @@
 //  Created by Nozhan A. on 5/23/25.
 //
 
-import SwiftUICore
+import SwiftUI
 
 public extension Animation {
     /// A `CustomAnimation` that uses an easing function to animate a `VectorArithmetic`.

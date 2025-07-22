@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SwiftUICore
+import SwiftUI
 
 /// A type-safe interface for commonly used CALayer animatable keypaths.
 ///
