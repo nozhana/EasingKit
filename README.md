@@ -1,6 +1,11 @@
 # EasingKit
 
 A pure **SwiftUI** implementation of all easing curves from [easings.net](https://easings.net), baked right into SwiftUI's `Animation` API and Core Animation.  
+
+<p align="center">
+  <img width="100%" src="./Curves.png" alt="EasingKit Curves">
+</p>
+
 With EasingKit, you can bring natural, delightful, and expressive motion to your apps—no boilerplate, no guesswork.
 
 ---
