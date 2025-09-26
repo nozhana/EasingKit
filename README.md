@@ -50,7 +50,7 @@ struct ContentView: View {
             .frame(width: 100, height: 100)
             .scaleEffect(scale)
             .onTapGesture {
-                withAnimation(.easeOutBack(duration: 0.6)) {
+                withAnimation(.eased(.easeInBack, duration: 0.6)) {
                     scale = scale == 1.0 ? 1.5 : 1.0
                 }
             }
