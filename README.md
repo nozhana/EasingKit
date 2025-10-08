@@ -16,7 +16,7 @@ With EasingKit, you can bring natural, delightful, and expressive motion to your
 
 ## 📖 Documentation & Tutorials
 
-- **Documentation:** [EasingKit Docs](https://nozhana.github.io/EasingKit/documentation/)  
+- **Documentation:** [EasingKit Docs](https://nozhana.github.io/EasingKit/documentation/easingkit)
 - **Tutorials:** [EasingKit Tutorials](https://nozhana.github.io/EasingKit/tutorials/easingkittutorials)  
 
 ---
