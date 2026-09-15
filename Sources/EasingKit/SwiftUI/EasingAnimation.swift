@@ -18,3 +18,17 @@ struct EasingAnimation: CustomAnimation {
         return eased
     }
 }
+
+#Preview {
+    @Previewable @State var scale: CGFloat = 1.0
+
+    Circle()
+        .fill(.blue)
+        .frame(width: 100, height: 100)
+        .scaleEffect(scale)
+        .onTapGesture {
+            withAnimation(.eased(.easeInBack, duration: 0.6)) {
+                scale = scale == 1.0 ? 1.5 : 1.0
+            }
+        }
+}
